@@ -3,11 +3,6 @@ using BankManagement.BLL.DTOs.OrderDTOs;
 using BankManagement.BLL.Services.Abstract;
 using BankManagement.DAL.Entities;
 using BankManagement.DAL.Repositories.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Concrete
 {
@@ -25,5 +20,17 @@ namespace BankManagement.BLL.Services.Concrete
 			Order order = _mapper.Map<Order>(dto);
             _orderRepository.Add(order);
 		}
-	}
+
+        public IEnumerable<OrderToListDto> GetAll()
+        {
+            return _mapper.Map<IEnumerable<OrderToListDto>>(_orderRepository.GetAll());
+        }
+
+        public OrderByIdDto GetById(int id)
+        {
+            Order entity = _orderRepository.GetById(id);
+            OrderByIdDto dto = _mapper.Map<OrderByIdDto>(entity);
+            return dto;
+        }
+    }
 }

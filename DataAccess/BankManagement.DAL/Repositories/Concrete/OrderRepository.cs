@@ -22,5 +22,15 @@ namespace BankManagement.DAL.Repositories.Concrete
 			_ctx.Orders.Add(order);
 			_ctx.SaveChanges();
 		}
-	}
+
+        public IEnumerable<Order> GetAll()
+        {
+            return _ctx.Orders;
+        }
+
+        public Order GetById(int id)
+        {
+            return _ctx.Orders.Where(t=>t.Id==id).First();
+        }
+    }
 }

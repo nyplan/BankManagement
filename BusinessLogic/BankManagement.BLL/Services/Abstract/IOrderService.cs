@@ -1,15 +1,11 @@
 ﻿using BankManagement.BLL.DTOs.OrderDTOs;
-using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Abstract
 {
 	public interface IOrderService
 	{
+		public OrderByIdDto GetById(int id);
 		public void Add(CreateOrderDTO dto);
+		IEnumerable<OrderToListDto> GetAll();
 	}
 }

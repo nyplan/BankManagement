@@ -22,5 +22,17 @@ namespace BankManagement.API.Controllers
 
 			return Ok();
 		}
-	}
+
+		[HttpGet]
+		public IActionResult Get()
+		{
+			return Ok(_orderService.GetAll());
+		}
+
+        [HttpGet("{id}")]
+        public IActionResult GetByIdDto([FromRoute] int id)
+        {
+            return Ok(_orderService.GetById(id));
+        }
+    }
 }
