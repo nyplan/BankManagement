@@ -1,4 +1,5 @@
 ﻿using BankManagement.BLL.Mappers;
+using BankManagement.DAL.Entities;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BankManagement.BLL
@@ -7,7 +8,7 @@ namespace BankManagement.BLL
     {
         public static void AddBLLServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MapperProfile));
+            services.AddAutoMapper(typeof(BankmapperProfile),typeof(Bank));
         }
     }
 }
