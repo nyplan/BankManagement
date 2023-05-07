@@ -4,6 +4,7 @@ using BankManagement.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankManagement.DAL.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    partial class BankDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230507114410_CardTypeWithFluentAPIaddedtoDatabase")]
+    partial class CardTypeWithFluentAPIaddedtoDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,19 +54,19 @@ namespace BankManagement.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9270),
+                            CreatedAt = new DateTime(2023, 5, 7, 15, 44, 10, 150, DateTimeKind.Local).AddTicks(1799),
                             Name = "Kapital Bank "
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9283),
+                            CreatedAt = new DateTime(2023, 5, 7, 15, 44, 10, 150, DateTimeKind.Local).AddTicks(1808),
                             Name = "ABB"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9284),
+                            CreatedAt = new DateTime(2023, 5, 7, 15, 44, 10, 150, DateTimeKind.Local).AddTicks(1809),
                             Name = "Merkezi Bank"
                         });
                 });
@@ -106,58 +109,6 @@ namespace BankManagement.DAL.Migrations
                     b.HasIndex("BankId");
 
                     b.ToTable("CardTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BankId = 1,
-                            CashBack = 0m,
-                            Comission = 10m,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9387),
-                            MaxCapacity = 10000m,
-                            Name = "Bir Kart"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BankId = 1,
-                            CashBack = 5m,
-                            Comission = 0m,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9389),
-                            MaxCapacity = 5000m,
-                            Name = "Premium Kart"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BankId = 2,
-                            CashBack = 0m,
-                            Comission = 5m,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9390),
-                            MaxCapacity = 20000m,
-                            Name = "Tam Kart"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BankId = 2,
-                            CashBack = 10m,
-                            Comission = 0m,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9392),
-                            MaxCapacity = 10000m,
-                            Name = "Gənc Kart"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BankId = 3,
-                            CashBack = 0m,
-                            Comission = 5m,
-                            CreatedAt = new DateTime(2023, 5, 7, 15, 51, 38, 407, DateTimeKind.Local).AddTicks(9393),
-                            MaxCapacity = 100000m,
-                            Name = "Mərkəz Kart"
-                        });
                 });
 
             modelBuilder.Entity("BankManagement.DAL.Entities.CardType", b =>
