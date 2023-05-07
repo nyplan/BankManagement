@@ -1,6 +1,8 @@
 ﻿using BankManagement.DAL.Contexts;
 using BankManagement.DAL.Contexts.Abstract;
 using BankManagement.DAL.Contexts.Concrete;
+using BankManagement.DAL.Repositories.Abstract;
+using BankManagement.DAL.Repositories.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +18,7 @@ namespace BankManagement.DAL
             });
 
             services.AddScoped<ICardRepository, CardRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             
         }
     }

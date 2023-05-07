@@ -10,8 +10,9 @@ namespace BankManagement.BLL
     {
         public static void AddBLLServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(BankmapperProfile),typeof(Bank), typeof(CardTypeMapper));
+            services.AddAutoMapper(typeof(BankmapperProfile),typeof(Bank), typeof(CardTypeMapper), typeof(OrderMapper));
             services.AddScoped<ICardService, CardService>();
+            services.AddScoped<IOrderService, OrderService>();
         }
     }
 }
