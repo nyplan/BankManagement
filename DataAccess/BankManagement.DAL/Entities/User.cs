@@ -8,5 +8,6 @@ namespace BankManagement.DAL.Entities
         public string Username { get; set; }
         public string Password { get; set; }
         public ICollection<Order> Orders { get; set; }
+        public ICollection<UserCard> Cards { get; set; }
     }
 }

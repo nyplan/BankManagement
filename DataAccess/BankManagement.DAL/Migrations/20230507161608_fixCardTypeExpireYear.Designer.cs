@@ -4,6 +4,7 @@ using BankManagement.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankManagement.DAL.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    partial class BankDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230507161608_fixCardTypeExpireYear")]
+    partial class fixCardTypeExpireYear
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,7 +120,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 0m,
                             Comission = 10m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4134),
                             ExpireYear = 3,
                             MaxCapacity = 10000m,
@@ -129,7 +131,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 5m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4138),
                             ExpireYear = 5,
                             MaxCapacity = 5000m,
@@ -141,7 +142,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 0m,
                             Comission = 5m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4140),
                             ExpireYear = 3,
                             MaxCapacity = 20000m,
@@ -153,7 +153,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 10m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4143),
                             ExpireYear = 5,
                             MaxCapacity = 10000m,
@@ -169,96 +168,6 @@ namespace BankManagement.DAL.Migrations
                             ExpireYear = 3,
                             MaxCapacity = 100000m,
                             Name = "Mərkəz Kart"
-                        });
-                });
-
-            modelBuilder.Entity("BankManagement.DAL.Entities.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CardTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CardTypeId");
-
-                    b.HasIndex("StatusId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("BankManagement.DAL.Entities.OrderStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StatusKey")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StatusValue")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderStatus");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StatusKey = "Waiting",
-                            StatusValue = "Gözləyir"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StatusKey = "Accepted",
-                            StatusValue = "Qəbul edildi"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StatusKey = "Cancelled",
-                            StatusValue = "Ləğv edildi"
                         });
                 });
 
@@ -362,36 +271,34 @@ namespace BankManagement.DAL.Migrations
                     b.Navigation("Bank");
                 });
 
-            modelBuilder.Entity("BankManagement.DAL.Entities.Order", b =>
+            modelBuilder.Entity("BankManagement.DAL.Entities.UserCard", b =>
                 {
-                    b.HasOne("BankManagement.DAL.Entities.CardType", "CardType")
-                        .WithMany()
-                        .HasForeignKey("CardTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BankManagement.DAL.Entities.OrderStatus", "OrderStatus")
-                        .WithMany()
-                        .HasForeignKey("StatusId")
-
+                    b.HasOne("BankManagement.DAL.Entities.CardType", "Card")
+                        .WithMany("Users")
+                        .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BankManagement.DAL.Entities.User", "User")
-                        .WithMany("Orders")
-
+                        .WithMany("Cards")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CardType");
-
-                    b.Navigation("OrderStatus");
-
+                    b.Navigation("Card");
 
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BankManagement.DAL.Entities.CardType", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("BankManagement.DAL.Entities.User", b =>
+                {
+                    b.Navigation("Cards");
+                });
 #pragma warning restore 612, 618
         }
     }
