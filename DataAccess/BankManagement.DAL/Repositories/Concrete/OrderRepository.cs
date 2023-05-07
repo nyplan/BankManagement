@@ -27,5 +27,10 @@ namespace BankManagement.DAL.Repositories.Concrete
         {
             return _ctx.Orders;
         }
+
+        public Order GetById(int id)
+        {
+            return _ctx.Orders.Where(t=>t.Id==id).First();
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace BankManagement.BLL.Mappers
                 .ForMember(dest => dest.Username, src => src.MapFrom(c => c.User.Username))
                 .ForMember(dest => dest.CardType, src => src.MapFrom(c => c.CardType.Name))
                 .ForMember(dest => dest.Status, src => src.MapFrom(c => c.OrderStatus.StatusValue));
+            
+            CreateMap<Order,OrderByIdDto>();
         }
     }
 }
