@@ -12,8 +12,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\UserDTOs\" />
-    <Folder Include="Services\Abstract\" />
-    <Folder Include="Services\Concrete\" />
   </ItemGroup>
 
   <ItemGroup>

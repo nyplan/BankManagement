@@ -1,4 +1,6 @@
 ﻿using BankManagement.BLL.Mappers;
+using BankManagement.BLL.Services.Abstract;
+using BankManagement.BLL.Services.Concrete;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BankManagement.BLL
@@ -7,7 +9,8 @@ namespace BankManagement.BLL
     {
         public static void AddBLLServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MapperProfile));
+            services.AddAutoMapper(typeof(MapperProfile),typeof(CardTypeMapper));
+            services.AddScoped<ICardService, CardService>();
         }
     }
 }
