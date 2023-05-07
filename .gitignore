@@ -1,0 +1,7 @@
+/.vs
+/BusinessLogic/BankManagement.BLL/bin
+/BusinessLogic/BankManagement.BLL/obj
+/DataAccess/BankManagement.DAL/bin
+/DataAccess/BankManagement.DAL/obj
+/Presentation/BankManagement.API/bin
+/Presentation/BankManagement.API/obj
