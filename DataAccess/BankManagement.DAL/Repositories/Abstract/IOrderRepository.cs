@@ -10,5 +10,6 @@ namespace BankManagement.DAL.Repositories.Abstract
 	public interface IOrderRepository
 	{
 		public void Add(Order order);
+		IEnumerable<Order> GetAll();
 	}
 }
