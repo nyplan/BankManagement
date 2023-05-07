@@ -22,5 +22,11 @@ namespace BankManagement.API.Controllers
 
 			return Ok();
 		}
+
+		[HttpGet]
+		public IActionResult Get()
+		{
+			return Ok(_orderService.GetAll());
+		}
 	}
 }

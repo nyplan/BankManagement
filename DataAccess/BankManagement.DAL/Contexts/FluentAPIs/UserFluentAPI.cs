@@ -8,6 +8,7 @@ namespace BankManagement.DAL.Contexts.FluentAPIs
         public static void UserPin(this ModelBuilder builder)
         {
             builder.Entity<User>().HasIndex(c => c.Pin).IsUnique();
+            builder.Entity<User>().HasIndex(c => c.Username).IsUnique();
         }
     }
 }

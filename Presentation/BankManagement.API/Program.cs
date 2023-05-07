@@ -1,5 +1,7 @@
 using BankManagement.BLL;
+using BankManagement.BLL.Services.Concrete;
 using BankManagement.DAL;
+using BankManagement.DAL.Repositories.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,7 @@ builder.Services.AddBLLServices();  // BLL Services
 
 builder.Services.Scan(scan =>  // Auto Service Registration
 {
-    scan.FromCallingAssembly()
+    scan.FromAssembliesOf(typeof(CardService), typeof(UserRepository))
     .AddClasses()
     .AsMatchingInterface()
     .WithScopedLifetime();

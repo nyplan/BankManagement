@@ -1,19 +1,18 @@
 ﻿using AutoMapper;
 using BankManagement.BLL.DTOs.OrderDTOs;
 using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Mappers
 {
-	public class OrderMapper :Profile
+    public class OrderMapper :Profile
 	{
         public OrderMapper()
         {
             CreateMap<CreateOrderDTO, Order>();
+            CreateMap<Order, OrderToListDto>()
+                .ForMember(dest => dest.Username, src => src.MapFrom(c => c.User.Username))
+                .ForMember(dest => dest.CardType, src => src.MapFrom(c => c.CardType.Name))
+                .ForMember(dest => dest.Status, src => src.MapFrom(c => c.OrderStatus.StatusValue));
         }
     }
 }
