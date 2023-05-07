@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BankManagement.DAL.Repositories.Concrete
 {
-    internal class BankRepository:IBankRepository
+    public class BankRepository:IBankRepository
     {
         private readonly BankDbContext _ctx;
         public BankRepository(BankDbContext ctx)

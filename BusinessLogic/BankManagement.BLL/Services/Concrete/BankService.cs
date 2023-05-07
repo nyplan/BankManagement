@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using BankManagement.BLL.DTOs.BankDtos;
 using BankManagement.BLL.Services.Abstract;
+using BankManagement.DAL.Entities;
+using BankManagement.DAL.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +11,26 @@ using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Concrete
 {
-    //internal class BankService:IBankService
-    //{
-    //    private readonly IMapper _mapper;
-    //    private readonly IUserRepostory _userrepostory;
-    //    public UserService(IMapper mapper, IUserRepostory userRepostory)
-    //    {
-    //        _mapper = mapper;
-    //        _userrepostory = userRepostory;
-    //    }
-    //    public void Add(UserToAddDto dto)
-    //    {
-    //        User entity = _mapper.Map<User>(dto);
-    //        _userrepostory.Add(entity);
-    //    }
+    public class BankService : IBankService
+    {
+        private readonly IMapper _mapper;
+        private readonly IBankRepository _bankrepository;
+        public BankService(IMapper mapper, IBankRepository bankRepository)
+        {
+            _mapper = mapper;
+            _bankrepository = bankRepository;
+        }
 
-    //    public void Delete(int id)
-    //    {
-    //        User entity = _userrepostory.Get(id);
-    //        _userrepostory.Delete(entity);
-    //    }
+        public List<BankToListDto> Get()
+        {
+            List<Bank> entities = _bankrepository.Get();
+            return _mapper.Map<List<BankToListDto>>(entities);
+        }
 
-    //    public List<UserToListDto> Get()
-    //    {
-    //        List<User> entities = _userrepostory.Get();
-    //        return _mapper.Map<List<UserToListDto>>(entities);
-    //    }
-    //}
+        public BankByIdDto Get(int id)
+        {
+            Bank entity = _bankrepository.Get(id);
+            return _mapper.Map<BankByIdDto>(entity);
+        }
+    }
 }
