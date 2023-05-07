@@ -1,0 +1,15 @@
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\bin\Debug\net7.0\BankManagement.BLL.deps.json
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\bin\Debug\net7.0\BankManagement.BLL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\bin\Debug\net7.0\BankManagement.BLL.pdb
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\bin\Debug\net7.0\BankManagement.DAL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\bin\Debug\net7.0\BankManagement.DAL.pdb
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.csproj.AssemblyReference.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.AssemblyInfoInputs.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.AssemblyInfo.cs
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.csproj.CopyComplete
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\refint\BankManagement.BLL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\BankManagement.BLL.pdb
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\BusinessLogic\BankManagement.BLL\obj\Debug\net7.0\ref\BankManagement.BLL.dll

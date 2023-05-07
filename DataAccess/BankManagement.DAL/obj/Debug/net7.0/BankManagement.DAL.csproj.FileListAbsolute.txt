@@ -1,0 +1,14 @@
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\bin\Debug\net7.0\BankManagement.DAL.deps.json
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\bin\Debug\net7.0\BankManagement.DAL.runtimeconfig.json
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\bin\Debug\net7.0\BankManagement.DAL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\bin\Debug\net7.0\BankManagement.DAL.pdb
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.csproj.AssemblyReference.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.AssemblyInfoInputs.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.AssemblyInfo.cs
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\refint\BankManagement.DAL.dll
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.pdb
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\BankManagement.DAL.genruntimeconfig.cache
+C:\Users\Teymur\Desktop\BankManagement\BankManagement\DataAccess\BankManagement.DAL\obj\Debug\net7.0\ref\BankManagement.DAL.dll

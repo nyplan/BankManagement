@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EI/MP939D7mKnAB9GjDLpbHJaCX7m7huNIlWEiPO98o=",
+  "Source": "BankManagement.API",
+  "BasePath": "_content/BankManagement.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
