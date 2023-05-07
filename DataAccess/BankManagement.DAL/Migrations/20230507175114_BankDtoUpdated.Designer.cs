@@ -4,6 +4,7 @@ using BankManagement.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankManagement.DAL.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    partial class BankDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230507175114_BankDtoUpdated")]
+    partial class BankDtoUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,21 +54,18 @@ namespace BankManagement.DAL.Migrations
                         new
                         {
                             Id = 1,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5896),
                             Name = "Kapital Bank "
                         },
                         new
                         {
                             Id = 2,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5912),
                             Name = "ABB"
                         },
                         new
                         {
                             Id = 3,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5913),
                             Name = "Merkezi Bank"
                         });
@@ -120,7 +120,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 0m,
                             Comission = 10m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6092),
                             ExpireYear = 3,
                             MaxCapacity = 10000m,
@@ -132,7 +131,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 5m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6095),
                             ExpireYear = 5,
                             MaxCapacity = 5000m,
@@ -144,7 +142,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 0m,
                             Comission = 5m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6096),
                             ExpireYear = 3,
                             MaxCapacity = 20000m,
@@ -156,7 +153,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 10m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6098),
                             ExpireYear = 5,
                             MaxCapacity = 10000m,
@@ -168,7 +164,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 3,
                             CashBack = 0m,
                             Comission = 5m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6100),
                             ExpireYear = 3,
                             MaxCapacity = 100000m,
@@ -293,14 +288,11 @@ namespace BankManagement.DAL.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Pin")
-                        .IsUnique();
-
-                    b.HasIndex("Username")
                         .IsUnique();
 
                     b.ToTable("Users");

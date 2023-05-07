@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Abstract
 {
-    internal interface IBankService
+    public interface IBankService
     {
         List<BankToListDto> Get();
         BankByIdDto Get(int id);

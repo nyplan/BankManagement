@@ -1,4 +1,5 @@
-﻿using BankManagement.DAL.Entities;
+﻿using BankManagement.BLL.DTOs.CardTypeDTOs;
+using BankManagement.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BankManagement.BLL.DTOs.BankDtos
 {
-    internal record BankToListDto
+    public record BankToListDto
     {
-        //public int Id { get; set; }
-        //public string Name { get; set; }
-        //public ICollection<CardType> CardType { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<CardTypeToListDto> CardType { get; set; }
     }
 }
