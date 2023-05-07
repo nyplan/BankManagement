@@ -1,5 +1,9 @@
-﻿using BankManagement.DAL.Entities.Common;
+﻿using BankManagement.DAL.Contexts.DataSeed;
+using BankManagement.DAL.Entities;
+using BankManagement.DAL.Entities.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Runtime.CompilerServices;
 
 namespace BankManagement.DAL.Contexts
 {
@@ -8,6 +12,17 @@ namespace BankManagement.DAL.Contexts
         public BankDbContext(DbContextOptions options) : base(options)
         {
         }
+
+        public DbSet<Bank> Banks { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            BankDataSeed.Seed(modelBuilder);  //data seed for bank table 
+        }
+
+
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())
@@ -30,6 +45,8 @@ namespace BankManagement.DAL.Contexts
             return base.SaveChanges();
         }
 
-
+        
     }
+
+    
 }
