@@ -25,5 +25,12 @@ namespace BankManagement.BLL.Services.Concrete
         {
             return _mapper.Map<IEnumerable<OrderToListDto>>(_orderRepository.GetAll());
         }
+
+        public OrderByIdDto GetById(int id)
+        {
+            Order entity = _orderRepository.GetById(id);
+            OrderByIdDto dto = _mapper.Map<OrderByIdDto>(entity);
+            return dto;
+        }
     }
 }
