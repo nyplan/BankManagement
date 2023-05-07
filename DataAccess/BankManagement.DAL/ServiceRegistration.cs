@@ -19,7 +19,8 @@ namespace BankManagement.DAL
 
             services.AddScoped<ICardRepository, CardRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            
+            services.AddScoped<IBankRepository, BankRepository>();
+
         }
     }
 }

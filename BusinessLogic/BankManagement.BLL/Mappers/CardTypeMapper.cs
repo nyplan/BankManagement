@@ -15,6 +15,7 @@ namespace BankManagement.BLL.Mappers
         {
             CreateMap<CardType, CardTypeByBankIdDto>();
             CreateMap<CardType, CardTypeByIdDto>();
+            CreateMap<CardType, CardTypeToListDto>();
         }
     }
 }

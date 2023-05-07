@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace BankManagement.DAL.Repositories.Concrete
 {
@@ -27,7 +28,7 @@ namespace BankManagement.DAL.Repositories.Concrete
 
         public Bank Get(int id)
         {
-            return _ctx.Banks.Find(id);
+            return _ctx.Banks.Include(b => b.CardType).First(b => b.Id == id);
         }
     }
 }
