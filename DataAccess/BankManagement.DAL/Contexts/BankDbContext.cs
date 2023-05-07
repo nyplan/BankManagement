@@ -3,8 +3,6 @@ using BankManagement.DAL.Contexts.FluentAPIs;
 using BankManagement.DAL.Entities;
 using BankManagement.DAL.Entities.Common;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Runtime.CompilerServices;
 
 namespace BankManagement.DAL.Contexts
 {
@@ -16,7 +14,7 @@ namespace BankManagement.DAL.Contexts
 
         public DbSet<Bank> Banks { get; set; }
         public DbSet<CardType> CardTypes { get; set; }
-
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,12 +23,9 @@ namespace BankManagement.DAL.Contexts
             CardTypeSeed.Seed(modelBuilder); //Data seed for CardType
 
             CardTypeFluentAPI.Fluent(modelBuilder); //FLuentAPI for CardType
+            UserFluentAPI.UserPin(modelBuilder);  // Unique User PIN 
 
-
-
-		
-
-		}
+        }
 
 
         public override int SaveChanges()
