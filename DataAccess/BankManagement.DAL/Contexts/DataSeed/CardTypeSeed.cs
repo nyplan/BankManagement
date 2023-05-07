@@ -21,6 +21,7 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					BankId = 1,
 					Comission=10,
 					CashBack=0,
+					ExpireYear=3,
 					MaxCapacity=10000,
 					CreatedAt = DateTime.Now //this code will add added time to CreatedAt column
 				},
@@ -32,7 +33,8 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					BankId = 1,
 					Comission=0,
 					CashBack=5,
-					MaxCapacity=5000,
+                    ExpireYear = 5,
+                    MaxCapacity =5000,
 					CreatedAt = DateTime.Now
 				},
 				new CardType()
@@ -41,7 +43,8 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Name= "Tam Kart",
 					BankId = 2,
 					Comission=5,
-					CashBack=0,
+                    ExpireYear = 3,
+                    CashBack =0,
 					MaxCapacity=20000,
 					CreatedAt = DateTime.Now
 				},
@@ -51,7 +54,8 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Name = "Gənc Kart",
 					BankId = 2,
 					Comission=0,
-					CashBack=10,
+                    ExpireYear = 5,
+                    CashBack =10,
 					MaxCapacity=10000,
 					CreatedAt = DateTime.Now
 				},
@@ -61,7 +65,8 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Name= "Mərkəz Kart",
 					BankId = 3,
 					Comission=5,
-					CashBack=0,
+                    ExpireYear = 3,
+                    CashBack =0,
 					MaxCapacity=100000,
 					CreatedAt = DateTime.Now
 				}

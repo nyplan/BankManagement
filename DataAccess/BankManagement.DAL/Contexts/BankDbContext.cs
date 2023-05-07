@@ -15,7 +15,7 @@ namespace BankManagement.DAL.Contexts
         public DbSet<Bank> Banks { get; set; }
         public DbSet<CardType> CardTypes { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<UserCard> UserCards { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -24,6 +24,7 @@ namespace BankManagement.DAL.Contexts
 
             CardTypeFluentAPI.Fluent(modelBuilder); //FLuentAPI for CardType
             UserFluentAPI.UserPin(modelBuilder);  // Unique User PIN 
+            UserCardFluentAPI.UserCard(modelBuilder); // Unique Card Number,CVV,Pincode
 
         }
 
