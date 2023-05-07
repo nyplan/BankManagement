@@ -13,7 +13,7 @@ namespace BankManagement.API.Controllers
         {
             _bankService = bankService;
         }
-
+         
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
