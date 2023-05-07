@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Repositories\Abstract\" />
-    <Folder Include="Repositories\Concrete\" />
   </ItemGroup>
 
 </Project>

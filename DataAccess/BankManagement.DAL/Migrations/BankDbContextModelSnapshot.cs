@@ -51,19 +51,19 @@ namespace BankManagement.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(3860),
+                            CreatedAt = new DateTime(2023, 5, 7, 19, 45, 50, 200, DateTimeKind.Local).AddTicks(1103),
                             Name = "Kapital Bank "
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(3878),
+                            CreatedAt = new DateTime(2023, 5, 7, 19, 45, 50, 200, DateTimeKind.Local).AddTicks(1117),
                             Name = "ABB"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(3879),
+                            CreatedAt = new DateTime(2023, 5, 7, 19, 45, 50, 200, DateTimeKind.Local).AddTicks(1118),
                             Name = "Merkezi Bank"
                         });
                 });
@@ -117,7 +117,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 0m,
                             Comission = 10m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4134),
                             ExpireYear = 3,
                             MaxCapacity = 10000m,
@@ -129,7 +128,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 5m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4138),
                             ExpireYear = 5,
                             MaxCapacity = 5000m,
@@ -141,7 +139,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 0m,
                             Comission = 5m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4140),
                             ExpireYear = 3,
                             MaxCapacity = 20000m,
@@ -153,7 +150,6 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 10m,
                             Comission = 0m,
-
                             CreatedAt = new DateTime(2023, 5, 7, 20, 16, 7, 904, DateTimeKind.Local).AddTicks(4143),
                             ExpireYear = 5,
                             MaxCapacity = 10000m,
@@ -354,7 +350,7 @@ namespace BankManagement.DAL.Migrations
             modelBuilder.Entity("BankManagement.DAL.Entities.CardType", b =>
                 {
                     b.HasOne("BankManagement.DAL.Entities.Bank", "Bank")
-                        .WithMany()
+                        .WithMany("CardType")
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -362,6 +358,10 @@ namespace BankManagement.DAL.Migrations
                     b.Navigation("Bank");
                 });
 
+            modelBuilder.Entity("BankManagement.DAL.Entities.Bank", b =>
+                {
+                    b.Navigation("CardType");
+                });
             modelBuilder.Entity("BankManagement.DAL.Entities.Order", b =>
                 {
                     b.HasOne("BankManagement.DAL.Entities.CardType", "CardType")
