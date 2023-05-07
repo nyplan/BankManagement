@@ -20,8 +20,4 @@
     <PackageReference Include="Scrutor.AspNetCore" Version="3.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Abstract\" />
-  </ItemGroup>
-
 </Project>
