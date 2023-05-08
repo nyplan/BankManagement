@@ -32,5 +32,12 @@ namespace BankManagement.BLL.Services.Concrete
             OrderByIdDto dto = _mapper.Map<OrderByIdDto>(entity);
             return dto;
         }
+
+        public void Patch(int id,PatchOrderDto dto)
+        {
+            Order entity = _orderRepository.GetById(id);
+            entity.StatusId = dto.StatusId;
+            _orderRepository.Patch(entity);
+        }
     }
 }

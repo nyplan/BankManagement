@@ -1,10 +1,5 @@
 ﻿using BankManagement.DAL.Contexts.Abstract;
 using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.DAL.Contexts.Concrete
 {
@@ -17,7 +12,7 @@ namespace BankManagement.DAL.Contexts.Concrete
         }
         public CardType GetByBankId(int id)
         {
-            CardType entity= _DbContext.CardTypes.Where(t => t.BankId == id).First();
+            CardType entity = _DbContext.CardTypes.Where(t => t.BankId == id).First();
             return entity;
         }
 

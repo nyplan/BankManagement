@@ -9,6 +9,7 @@ namespace BankManagement.BLL.Mappers
         public OrderMapper()
         {
             CreateMap<CreateOrderDTO, Order>();
+            CreateMap<PatchOrderDto, Order>();
             CreateMap<Order, OrderToListDto>()
                 .ForMember(dest => dest.Username, src => src.MapFrom(c => c.User.Username))
                 .ForMember(dest => dest.CardType, src => src.MapFrom(c => c.CardType.Name))

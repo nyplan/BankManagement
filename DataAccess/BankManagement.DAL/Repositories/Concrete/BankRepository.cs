@@ -16,9 +16,7 @@ namespace BankManagement.DAL.Repositories.Concrete
         private readonly BankDbContext _ctx;
         public BankRepository(BankDbContext ctx)
         {
-
             _ctx = ctx;
-
         }
 
         public List<Bank> Get()

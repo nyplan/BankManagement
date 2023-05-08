@@ -34,5 +34,11 @@ namespace BankManagement.API.Controllers
         {
             return Ok(_orderService.GetById(id));
         }
+        [HttpPatch("{id}")]
+        public IActionResult Patch([FromRoute] int id, [FromBody] PatchOrderDto dto)
+        {
+            _orderService.Patch(id,dto);
+            return Ok();
+        }
     }
 }

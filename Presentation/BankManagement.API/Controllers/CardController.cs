@@ -1,5 +1,5 @@
-﻿using BankManagement.BLL.Services.Abstract;
-using Microsoft.AspNetCore.Mvc;
+﻿global using BankManagement.BLL.Services.Abstract;
+global using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
