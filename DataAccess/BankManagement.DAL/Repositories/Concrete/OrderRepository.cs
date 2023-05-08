@@ -1,6 +1,7 @@
 ﻿using BankManagement.DAL.Contexts;
 using BankManagement.DAL.Entities;
 using BankManagement.DAL.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace BankManagement.DAL.Repositories.Concrete
 {
@@ -13,19 +14,18 @@ namespace BankManagement.DAL.Repositories.Concrete
         }
         public void Add(Order order)
         {
-            order.StatusId = 1;
             _ctx.Orders.Add(order);
             _ctx.SaveChanges();
         }
 
-        public IEnumerable<Order> GetAll()
+        public IQueryable<Order> GetAll()
         {
-            return _ctx.Orders;
+            return _ctx.Orders.Include(c => c.User).Include(c => c.CardType).Include(c => c.OrderStatus);
         }
 
         public Order GetById(int id)
         {
-            return _ctx.Orders.Where(t => t.Id == id).First();
+            return _ctx.Orders.Find(id);
         }
 
         public void Patch(Order order)

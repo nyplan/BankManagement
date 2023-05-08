@@ -1,5 +1,4 @@
 ﻿using BankManagement.BLL.DTOs.OrderDTOs;
-using BankManagement.DAL.Entities;
 
 namespace BankManagement.BLL.Services.Abstract
 {
@@ -8,6 +7,6 @@ namespace BankManagement.BLL.Services.Abstract
 		public OrderByIdDto GetById(int id);
 		public void Add(CreateOrderDTO dto);
 		IEnumerable<OrderToListDto> GetAll();
-		public void Patch(int id,PatchOrderDto dto);
+		public void PatchStatus(int id, int statusId);
 	}
 }

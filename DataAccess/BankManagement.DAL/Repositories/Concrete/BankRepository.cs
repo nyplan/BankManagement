@@ -2,12 +2,6 @@
 using BankManagement.DAL.Entities;
 using BankManagement.DAL.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace BankManagement.DAL.Repositories.Concrete
 {

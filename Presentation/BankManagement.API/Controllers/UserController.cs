@@ -23,15 +23,16 @@ namespace BankManagement.API.Controllers
         [HttpGet]
         public IActionResult Login(string username, string password)
         {
+            UserInfo user = null;
             try
             {
-                _service.Login(new UserLogin() { Username = username, Password = password });
+                 user = _service.Login(new UserLogin() { Username = username, Password = password });
             }
             catch (Exception)
             {
                 return BadRequest("Username or password is incorrect");
             }
-            return Ok();
+            return Ok(user);
         }
     }
 }

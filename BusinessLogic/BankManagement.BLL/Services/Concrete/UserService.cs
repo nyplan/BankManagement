@@ -16,10 +16,10 @@ namespace BankManagement.BLL.Services.Concrete
             _mapper = mapper;
         }
 
-        public UserLogin Login(UserLogin dto)
+        public UserInfo Login(UserLogin dto)
         {
             User user = _repository.Get(dto.Username, dto.Password);
-            return _mapper.Map<UserLogin>(user);
+            return _mapper.Map<UserInfo>(user);
         }
 
         public void Register(UserRegister dto)

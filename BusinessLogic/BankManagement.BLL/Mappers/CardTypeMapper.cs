@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using BankManagement.BLL.DTOs.CardTypeDTOs;
 using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Mappers
 {
@@ -13,8 +8,10 @@ namespace BankManagement.BLL.Mappers
     {
         public CardTypeMapper()
         {
-            CreateMap<CardType, CardTypeByBankIdDto>();
-            CreateMap<CardType, CardTypeByIdDto>();
+            CreateMap<CardType, CardTypeByBankIdDto>()
+                .ForMember(dest => dest.Bank, src => src.MapFrom(c => c.Bank.Name));
+            CreateMap<CardType, CardTypeByIdDto>()
+                .ForMember(dest => dest.Bank, src => src.MapFrom(c => c.Bank.Name));
             CreateMap<CardType, CardTypeToListDto>();
         }
     }

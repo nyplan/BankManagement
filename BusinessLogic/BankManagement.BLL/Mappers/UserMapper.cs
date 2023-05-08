@@ -9,7 +9,7 @@ namespace BankManagement.BLL.Mappers
         public UserMapper()
         {
             CreateMap<UserRegister, User>();
-            CreateMap<User, UserLogin>();
+            CreateMap<User, UserInfo>();
         }
     }
 }

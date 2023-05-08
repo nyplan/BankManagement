@@ -15,11 +15,11 @@ namespace BankManagement.BLL.Services.Concrete
             _mapper = mapper;
             _repo = repo;
         }
-        public CardTypeByBankIdDto GetByBankId(int id)
+        public IEnumerable<CardTypeByBankIdDto> GetByBankId(int id)
         {
-            CardType entity = _repo.GetByBankId(id);
-            CardTypeByBankIdDto dto = _mapper.Map<CardTypeByBankIdDto>(entity);
-            return dto;
+            IEnumerable<CardType> entity = _repo.GetByBankId(id);
+            IEnumerable<CardTypeByBankIdDto> dtos = _mapper.Map<IEnumerable<CardTypeByBankIdDto>>(entity);
+            return dtos;
         }
 
         public CardTypeByIdDto GetById(int id)

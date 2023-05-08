@@ -6,7 +6,7 @@ namespace BankManagement.DAL.Repositories.Abstract
     {
         public Order GetById(int id);
         public void Add(Order order);
-        IEnumerable<Order> GetAll();
+        IQueryable<Order> GetAll();
         public void Patch(Order order);
     }
 }

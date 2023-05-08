@@ -1,10 +1,6 @@
 ﻿using BankManagement.DAL.Contexts.Abstract;
 using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace BankManagement.DAL.Contexts.Concrete
 {
@@ -15,16 +11,15 @@ namespace BankManagement.DAL.Contexts.Concrete
         {
             _DbContext = dbContext;
         }
-        public CardType GetByBankId(int id)
+        public IEnumerable<CardType> GetByBankId(int id)
         {
-            CardType entity = _DbContext.CardTypes.Where(t => t.BankId == id).First();
-
+            IEnumerable<CardType> entity = _DbContext.CardTypes.Include(c => c.Bank).Where(t => t.BankId == id);
             return entity;
         }
 
         public CardType GetById(int id)
         {
-            CardType entity = _DbContext.CardTypes.Where(t => t.Id == id).First();
+            CardType entity = _DbContext.CardTypes.Include(c => c.Bank).FirstOrDefault(t => t.Id == id);
             return entity;
         }
     }

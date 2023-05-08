@@ -53,6 +53,15 @@ namespace BankManagement.DAL.Contexts
                     };
                 }
             }
+
+            foreach (var entry in ChangeTracker.Entries<Order>())
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.StatusId = 1;
+                }
+            }
+
             return base.SaveChanges();
         }
 

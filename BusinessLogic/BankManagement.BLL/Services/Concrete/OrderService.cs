@@ -33,10 +33,14 @@ namespace BankManagement.BLL.Services.Concrete
             return dto;
         }
 
-        public void Patch(int id,PatchOrderDto dto)
+        public void PatchStatus(int id, int statusId)
         {
             Order entity = _orderRepository.GetById(id);
-            entity.StatusId = dto.StatusId;
+            entity.StatusId = statusId;
+            if (true)
+            {
+
+            }
             _orderRepository.Patch(entity);
         }
     }

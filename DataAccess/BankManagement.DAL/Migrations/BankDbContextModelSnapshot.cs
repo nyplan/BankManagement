@@ -45,28 +45,25 @@ namespace BankManagement.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banks");
+                    b.ToTable("Banks", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5896),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(610),
                             Name = "Kapital Bank "
                         },
                         new
                         {
                             Id = 2,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5912),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(636),
                             Name = "ABB"
                         },
                         new
                         {
                             Id = 3,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(5913),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(638),
                             Name = "Merkezi Bank"
                         });
                 });
@@ -111,7 +108,7 @@ namespace BankManagement.DAL.Migrations
 
                     b.HasIndex("BankId");
 
-                    b.ToTable("CardTypes");
+                    b.ToTable("CardTypes", (string)null);
 
                     b.HasData(
                         new
@@ -120,8 +117,7 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 0m,
                             Comission = 10m,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6092),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(974),
                             ExpireYear = 3,
                             MaxCapacity = 10000m,
                             Name = "Bir Kart"
@@ -132,8 +128,7 @@ namespace BankManagement.DAL.Migrations
                             BankId = 1,
                             CashBack = 5m,
                             Comission = 0m,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6095),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(979),
                             ExpireYear = 5,
                             MaxCapacity = 5000m,
                             Name = "Premium Kart"
@@ -144,8 +139,7 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 0m,
                             Comission = 5m,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6096),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(982),
                             ExpireYear = 3,
                             MaxCapacity = 20000m,
                             Name = "Tam Kart"
@@ -156,8 +150,7 @@ namespace BankManagement.DAL.Migrations
                             BankId = 2,
                             CashBack = 10m,
                             Comission = 0m,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6098),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(985),
                             ExpireYear = 5,
                             MaxCapacity = 10000m,
                             Name = "Gənc Kart"
@@ -168,8 +161,7 @@ namespace BankManagement.DAL.Migrations
                             BankId = 3,
                             CashBack = 0m,
                             Comission = 5m,
-
-                            CreatedAt = new DateTime(2023, 5, 7, 21, 51, 14, 434, DateTimeKind.Local).AddTicks(6100),
+                            CreatedAt = new DateTime(2023, 5, 7, 22, 40, 12, 860, DateTimeKind.Local).AddTicks(988),
                             ExpireYear = 3,
                             MaxCapacity = 100000m,
                             Name = "Mərkəz Kart"
@@ -210,7 +202,7 @@ namespace BankManagement.DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("BankManagement.DAL.Entities.OrderStatus", b =>
@@ -240,7 +232,7 @@ namespace BankManagement.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatus");
+                    b.ToTable("OrderStatus", (string)null);
 
                     b.HasData(
                         new
@@ -303,7 +295,7 @@ namespace BankManagement.DAL.Migrations
                     b.HasIndex("Username")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("BankManagement.DAL.Entities.UserCard", b =>
@@ -355,7 +347,7 @@ namespace BankManagement.DAL.Migrations
                     b.HasIndex("Number", "CVV", "Pincode")
                         .IsUnique();
 
-                    b.ToTable("UserCards");
+                    b.ToTable("UserCards", (string)null);
                 });
 
             modelBuilder.Entity("BankManagement.DAL.Entities.CardType", b =>

@@ -35,9 +35,9 @@ namespace BankManagement.API.Controllers
             return Ok(_orderService.GetById(id));
         }
         [HttpPatch("{id}")]
-        public IActionResult Patch([FromRoute] int id, [FromBody] PatchOrderDto dto)
+        public IActionResult PatchStatus([FromRoute] int id, int statusId)
         {
-            _orderService.Patch(id,dto);
+            _orderService.PatchStatus(id,statusId);
             return Ok();
         }
     }
