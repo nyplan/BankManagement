@@ -1,5 +1,5 @@
-﻿using BankManagement.BLL.Services.Abstract;
-using Microsoft.AspNetCore.Mvc;
+﻿global using BankManagement.BLL.Services.Abstract;
+global using Microsoft.AspNetCore.Mvc;
 
 namespace BankManagement.API.Controllers
 {

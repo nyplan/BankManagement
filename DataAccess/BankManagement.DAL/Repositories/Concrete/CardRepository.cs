@@ -17,7 +17,8 @@ namespace BankManagement.DAL.Contexts.Concrete
         }
         public CardType GetByBankId(int id)
         {
-            CardType entity= _DbContext.CardTypes.Where(t => t.BankId == id).First();
+            CardType entity = _DbContext.CardTypes.Where(t => t.BankId == id).First();
+
             return entity;
         }
 

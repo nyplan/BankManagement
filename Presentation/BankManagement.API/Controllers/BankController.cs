@@ -1,5 +1,4 @@
 ﻿using BankManagement.BLL.Services.Abstract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankManagement.API.Controllers
@@ -13,7 +12,7 @@ namespace BankManagement.API.Controllers
         {
             _bankService = bankService;
         }
-         
+
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
