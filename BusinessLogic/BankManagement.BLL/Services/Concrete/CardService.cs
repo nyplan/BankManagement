@@ -3,11 +3,6 @@ using BankManagement.BLL.DTOs.CardTypeDTOs;
 using BankManagement.BLL.Services.Abstract;
 using BankManagement.DAL.Contexts.Abstract;
 using BankManagement.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Concrete
 {
