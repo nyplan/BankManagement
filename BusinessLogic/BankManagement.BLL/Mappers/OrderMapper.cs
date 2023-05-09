@@ -15,7 +15,11 @@ namespace BankManagement.BLL.Mappers
                 .ForMember(dest => dest.CardType, src => src.MapFrom(c => c.CardType.Name))
                 .ForMember(dest => dest.Status, src => src.MapFrom(c => c.OrderStatus.StatusValue));
 
-            CreateMap<Order, OrderDTO>()
+            CreateMap<Order, AcceptedOrder>()
+                .ForMember(dest => dest.Ownername, src => src.MapFrom(c => c.User.Username))
+                .ForMember(dest => dest.Status, src => src.MapFrom(c => c.OrderStatus.StatusValue))
+                .ForMember(dest => dest.Card, src => src.MapFrom(c => c.CardType.Name));
+            CreateMap<Order, WaitRejectOrder>()
                 .ForMember(dest => dest.Ownername, src => src.MapFrom(c => c.User.Username))
                 .ForMember(dest => dest.Status, src => src.MapFrom(c => c.OrderStatus.StatusValue))
                 .ForMember(dest => dest.Card, src => src.MapFrom(c => c.CardType.Name));
