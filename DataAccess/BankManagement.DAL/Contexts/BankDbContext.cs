@@ -33,7 +33,6 @@ namespace BankManagement.DAL.Contexts
 
         }
 
-
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())

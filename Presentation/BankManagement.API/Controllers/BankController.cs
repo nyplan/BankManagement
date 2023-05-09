@@ -1,7 +1,4 @@
-﻿using BankManagement.BLL.Services.Abstract;
-using Microsoft.AspNetCore.Mvc;
-
-namespace BankManagement.API.Controllers
+﻿namespace BankManagement.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

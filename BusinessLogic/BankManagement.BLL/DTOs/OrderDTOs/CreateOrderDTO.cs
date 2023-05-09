@@ -1,8 +1,9 @@
 ﻿namespace BankManagement.BLL.DTOs.OrderDTOs
 {
-	public class CreateOrderDTO
+	public record CreateOrderDTO
 	{
 		public int UserId { get; set; }
 		public int CardTypeId { get; set; }
+		public int Pincode { get; set; }
 	}
 }

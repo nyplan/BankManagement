@@ -9,6 +9,7 @@ namespace BankManagement.DAL.Entities
         public User User { get; set; }
         public int CardTypeId { get; set; }
         public CardType CardType { get; set; }
+        public int Pincode { get; set; }
 
         [ForeignKey("OrderStatus")]
         public int StatusId { get; set; }

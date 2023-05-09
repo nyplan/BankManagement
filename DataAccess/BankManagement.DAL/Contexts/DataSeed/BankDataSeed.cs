@@ -13,22 +13,18 @@ namespace BankManagement.DAL.Contexts.DataSeed
              new Bank()
             {
                  Id = 1,
-                 Name= "Kapital Bank ",
-                 CreatedAt = DateTime.Now //this code will add added time to CreatedAt column
+                 Name= "Kapital Bank "
             },
              new Bank()
              {
                  Id= 2,
-                 Name= "ABB",
-                 CreatedAt = DateTime.Now
+                 Name= "ABB"
              },
              new Bank()
              {
                  Id= 3,
-                 Name="Merkezi Bank",
-                 CreatedAt= DateTime.Now
-             }
-             );
+                 Name="Merkezi Bank"
+             });
         }
     }
 }

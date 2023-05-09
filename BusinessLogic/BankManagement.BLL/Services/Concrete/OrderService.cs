@@ -9,11 +9,13 @@ namespace BankManagement.BLL.Services.Concrete
 	public class OrderService : IOrderService
 	{
 		private readonly IOrderRepository _orderRepository;
+        private readonly IUserCardRepository _userCardRepository;
 		private readonly IMapper _mapper;
-        public OrderService(IOrderRepository repository, IMapper mapper)
+        public OrderService(IOrderRepository repository, IMapper mapper, IUserCardRepository userCardRepository)
         {
             _orderRepository = repository;
-			_mapper = mapper;
+            _mapper = mapper;
+            _userCardRepository = userCardRepository;
         }
         public void Add(CreateOrderDTO dto)
 		{
@@ -21,15 +23,23 @@ namespace BankManagement.BLL.Services.Concrete
             _orderRepository.Add(order);
 		}
 
-        public IEnumerable<OrderToListDto> GetAll()
+        public IEnumerable<OrderToListDto> GetByUserId(int id)
         {
-            return _mapper.Map<IEnumerable<OrderToListDto>>(_orderRepository.GetAll());
+            return _mapper.Map<IEnumerable<OrderToListDto>>(_orderRepository.GetByUserId(id));
         }
 
-        public OrderByIdDto GetById(int id)
+        public OrderDTO GetById(int id)
         {
             Order entity = _orderRepository.GetById(id);
-            OrderByIdDto dto = _mapper.Map<OrderByIdDto>(entity);
+            if (entity.StatusId == 2)
+            {
+                UserCard data = _userCardRepository.GetByOrderId(id);
+                AcceptedOrder order = _mapper.Map<AcceptedOrder>(entity);
+                order.Number = data.Number;
+                order.CVV = data.CVV;
+                return order;
+            }
+            WaitRejectOrder dto = _mapper.Map<WaitRejectOrder>(entity);
             return dto;
         }
 
@@ -37,9 +47,23 @@ namespace BankManagement.BLL.Services.Concrete
         {
             Order entity = _orderRepository.GetById(id);
             entity.StatusId = statusId;
-            if (true)
+            if (statusId == 2)
             {
-
+                UserCard uCard = new UserCard();
+                Random random = new Random();
+                bool check = true;
+                while (check)
+                {
+                    uCard.Number = random.NextInt64(1111111111111111, 9999999999999999);
+                    check = _userCardRepository.Any(card => card.Number == uCard.Number);
+                }
+                uCard.CVV = random.Next(100, 999);
+                uCard.Pincode = entity.Pincode;
+                uCard.OwnerName = entity.User.Username;
+                uCard.UserId = entity.UserId;
+                uCard.CardId = entity.CardTypeId;
+                uCard.OrderId = entity.Id;
+                _userCardRepository.Add(uCard);
             }
             _orderRepository.Patch(entity);
         }

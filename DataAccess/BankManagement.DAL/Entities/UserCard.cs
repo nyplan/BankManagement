@@ -7,10 +7,12 @@ namespace BankManagement.DAL.Entities
     {
         public int UserId { get; set; }
         public User User { get; set; }
+        public int OrderId { get; set; }
+        public Order Order { get; set; }
         public int CardId { get; set; }
         public CardType Card { get; set; }
         [MaxLength(16)]
-        public int Number { get; set; }
+        public long Number { get; set; }
         [MaxLength(3)]
         public int CVV { get; set; }
         [MaxLength(4)]

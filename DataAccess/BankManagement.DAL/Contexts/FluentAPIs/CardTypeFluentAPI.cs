@@ -1,10 +1,5 @@
 ﻿using BankManagement.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.DAL.Contexts.FluentAPIs
 {
@@ -19,7 +14,6 @@ namespace BankManagement.DAL.Contexts.FluentAPIs
 			entity.Property(u => u.MaxCapacity).HasColumnType("decimal(12,2)");
 			entity.Property(u => u.Comission).HasColumnType("decimal(10,2)");
 			entity.Property(u => u.CashBack).HasColumnType("decimal(10,2)");
-
 
 		}
 	}

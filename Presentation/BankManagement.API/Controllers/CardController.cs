@@ -12,7 +12,6 @@ namespace BankManagement.API.Controllers
         {
             _cardService = cardService;
         }
-        // GET api/<CardController>/5
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

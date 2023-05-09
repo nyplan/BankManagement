@@ -1,10 +1,5 @@
 ﻿using BankManagement.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.DAL.Contexts.DataSeed
 {
@@ -22,8 +17,7 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Comission=10,
 					CashBack=0,
 					ExpireYear=3,
-					MaxCapacity=10000,
-					CreatedAt = DateTime.Now //this code will add added time to CreatedAt column
+					MaxCapacity=10000
 				},
 
 				new CardType()
@@ -34,8 +28,7 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Comission=0,
 					CashBack=5,
                     ExpireYear = 5,
-                    MaxCapacity =5000,
-					CreatedAt = DateTime.Now
+                    MaxCapacity =5000
 				},
 				new CardType()
 				{
@@ -45,8 +38,7 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Comission=5,
                     ExpireYear = 3,
                     CashBack =0,
-					MaxCapacity=20000,
-					CreatedAt = DateTime.Now
+					MaxCapacity=20000
 				},
 				new CardType()
 				{
@@ -56,8 +48,7 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Comission=0,
                     ExpireYear = 5,
                     CashBack =10,
-					MaxCapacity=10000,
-					CreatedAt = DateTime.Now
+					MaxCapacity=10000
 				},
 				new CardType()
 				{
@@ -67,11 +58,8 @@ namespace BankManagement.DAL.Contexts.DataSeed
 					Comission=5,
                     ExpireYear = 3,
                     CashBack =0,
-					MaxCapacity=100000,
-					CreatedAt = DateTime.Now
-				}
-
-				);
+					MaxCapacity=100000
+				});
 		}
 
 	}

@@ -4,9 +4,9 @@ namespace BankManagement.BLL.Services.Abstract
 {
 	public interface IOrderService
 	{
-		public OrderByIdDto GetById(int id);
+		public OrderDTO GetById(int id);
 		public void Add(CreateOrderDTO dto);
-		IEnumerable<OrderToListDto> GetAll();
+		IEnumerable<OrderToListDto> GetByUserId(int id);
 		public void PatchStatus(int id, int statusId);
 	}
 }

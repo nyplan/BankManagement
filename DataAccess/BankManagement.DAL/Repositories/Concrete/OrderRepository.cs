@@ -18,14 +18,22 @@ namespace BankManagement.DAL.Repositories.Concrete
             _ctx.SaveChanges();
         }
 
-        public IQueryable<Order> GetAll()
+        public IQueryable<Order> GetByUserId(int id)
         {
-            return _ctx.Orders.Include(c => c.User).Include(c => c.CardType).Include(c => c.OrderStatus);
+            return _ctx.Orders
+                .Include(c => c.User)
+                .Include(c => c.CardType)
+                .Include(c => c.OrderStatus)
+                .Where(c => c.UserId == id);
         }
 
         public Order GetById(int id)
         {
-            return _ctx.Orders.Find(id);
+            return _ctx.Orders
+                .Include(c => c.User)
+                .Include(c => c.CardType)
+                .Include(c => c.OrderStatus)
+                .Single(c => c.Id == id);
         }
 
         public void Patch(Order order)

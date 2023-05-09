@@ -3,11 +3,6 @@ using BankManagement.BLL.DTOs.BankDtos;
 using BankManagement.BLL.Services.Abstract;
 using BankManagement.DAL.Entities;
 using BankManagement.DAL.Repositories.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankManagement.BLL.Services.Concrete
 {
